@@ -1,16 +1,21 @@
-// super keyword can be used to refer the immediate parent class instance variable.
+// super keyword can be used to invoke parent class method.
 class A{
-	int no=10;
+	void show(){
+		System.out.println("i am A method");
+		}
 	}
 class B extends A{
-	int no=20;
-	void show(int no){
-		System.out.println(super.no);
+		void show(){
+			super.show();
+			System.out.println("i am B method");
+		}
+		void m1(){
+			super.show();
 		}
 	}
 class superTest{
 	public static void main(String ar[]){
 		B ob=new B();
-		ob.show(30);
+		ob.m1();
 	}
 }
